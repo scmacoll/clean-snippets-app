@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/clean-snippets-app.app

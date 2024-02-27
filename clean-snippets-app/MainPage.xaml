@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="clean_snippets_app.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="Clean Snippets"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Simplify Your Code Snippets for Sharing and Prompting"
+                FontSize="16"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Tagline" />
+
+            <!-- Section for Code Input -->
+            <Label Text="Remove:"
+                   FontSize="20"
+                   Style="{StaticResource SubHeadline}"
+                   SemanticProperties.HeadingLevel="Level2" />
+
+            <!-- Code Input Area -->
+            <Editor x:Name="inputArea"
+                    Placeholder="Paste your code here..."
+                    HeightRequest="150" />
+
+            <!-- Buttons -->
+            <Button x:Name="cleanButton"
+                    Text="Clean"
+                    />
+
+            <Button x:Name="clearButton"
+                    Text="Clear"
+                    />
+
+            <!-- Output Area -->
+            <Editor x:Name="outputArea"
+                    Placeholder="Cleaned code will appear here..."
+                    IsReadOnly="true"
+                    HeightRequest="150" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
