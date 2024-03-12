@@ -29,32 +29,32 @@
             <!-- Toggle Controls for Cleaning Options -->
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanAllToggle"/>
-                    <Label Text="All" />
+                    <CheckBox x:Name="cleanAllToggle" VerticalOptions="Center" />
+                    <Label Text="All" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanBlankLinesToggle"/>
-                    <Label Text="Blank Lines" />
+                    <CheckBox x:Name="cleanBlankLinesToggle" VerticalOptions="Center" />
+                    <Label Text="Blank Lines" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanCommentsToggle"/>
-                    <Label Text="Comments" />
+                    <CheckBox x:Name="cleanCommentsToggle" VerticalOptions="Center" />
+                    <Label Text="Comments" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanImportsToggle"/>
-                    <Label Text="Imports" />
+                    <CheckBox x:Name="cleanImportsToggle" VerticalOptions="Center" />
+                    <Label Text="Imports" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanSvgToggle"/>
-                    <Label  Text="SVG (inline)" />
+                    <CheckBox x:Name="cleanSvgToggle" VerticalOptions="Center" />
+                    <Label  Text="SVG (inline)" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanWhitespaceToggle"/>
-                    <Label Text="Whitespace" />
+                    <CheckBox x:Name="cleanWhitespaceToggle" VerticalOptions="Center" />
+                    <Label Text="Whitespace" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanWrapToggle"/>
-                    <Label Text="Wrapping" />
+                    <CheckBox x:Name="cleanWrapToggle" VerticalOptions="Center" />
+                    <Label Text="Wrapping" VerticalOptions="Center" />
                 </StackLayout>
             </StackLayout>
 
@@ -66,19 +66,23 @@
             <!-- Buttons -->
             <Button x:Name="cleanButton"
                     Text="Clean"
+                    Clicked="OnCleanButtonClicked"
                     />
-                    <!-- Clicked="OnCleanButtonClicked" /> -->
 
             <Button x:Name="clearButton"
                     Text="Clear"
+                    Clicked="OnClearButtonClicked"
+                    IsVisible="false"
                     />
-                    <!-- Clicked="OnClearButtonClicked" /> -->
 
             <!-- Output Area -->
-            <Editor x:Name="outputArea"
-                    Placeholder="Cleaned code will appear here..."
-                    IsReadOnly="true"
-                    HeightRequest="150" />
+            <ScrollView HeightRequest="150">
+                <Label x:Name="outputArea"
+                       Text="Cleaned code will appear here..."
+                       VerticalOptions="Start"
+                       HorizontalOptions="FillAndExpand" />
+            </ScrollView>
+
 
             <Button
                 x:Name="CounterBtn"

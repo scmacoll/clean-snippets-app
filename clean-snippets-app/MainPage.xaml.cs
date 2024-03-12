@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using Microsoft.Maui.Controls;
+using System.Text.RegularExpressions;
 
 namespace clean_snippets_app;
 
@@ -22,55 +24,61 @@ public partial class MainPage : ContentPage
 
         SemanticScreenReader.Announce(CounterBtn.Text);
     }
+    private void OnCleanButtonClicked(object sender, EventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(inputArea.Text))
+        {
+            // Optionally, show a message indicating the input area is empty
+            return;
+        }
 
-    //
-    // // Call this method from your "Clean" button's Clicked event in XAML.
-    // private void OnCleanButtonClicked(object sender, EventArgs e)
-    // {
-    //     var cleanedCode = CleanCode(inputArea.Text);
-    //     outputArea.Text = cleanedCode;
-    // }
-    //
-    // // Call this method from your "Clear" button's Clicked event in XAML.
-    // private void OnClearButtonClicked(object sender, EventArgs e)
-    // {
-    //     inputArea.Text = string.Empty;
-    //     outputArea.Text = string.Empty;
-    //     // Reset checkboxes if needed
-    // }
-    //
-    // private string CleanCode(string code)
-    // {
-    //     code = CleanSVGs(code);
-    //     code = CleanComments(code);
-    //     // Continue with other cleaning functions...
-    //     return code;
-    // }
-    //
-    // private string CleanSVGs(string code)
-    // {
-    //     // Assuming you have a CheckBox named cleanSvgToggle in your XAML
-    //     if (cleanSvgToggle.IsChecked)
-    //     {
-    //         code = Regex.Replace(code, @"<svg[\s\S]*?<\/svg>", "<svg></svg>");
-    //     }
-    //     return code;
-    // }
-    //
-    // private string CleanComments(string code)
-    // {
-    //     // Assuming you have a CheckBox named cleanCommentsToggle in your XAML
-    //     if (cleanCommentsToggle.IsChecked)
-    //     {
-    //         // Adapt the regex patterns from your JavaScript functions to C#
-    //         code = Regex.Replace(code, @"^\s*\/\/.*\n?", "", RegexOptions.Multiline)
-    //             .Replace("/\\*[\\s\\S]*?\\*/\\s*\\n?", "") // Multi-line comments
-    //             .Replace("^\\s*#.*\\n?", "") // Single-line hash comments
-    //             .Replace("/'''[\\s\\S]*?'''\\s*\\n?", "") // Multi-line quotes in Python
-    //             .Replace("/\"\"\"[\\s\\S]*?\"\"\"\\s*\\n?", ""); // Multi-line double quotes in Python
-    //     }
-    //     return code;
-    // }
+        string cleanedCode = inputArea.Text;
 
-    // Implement other cleaning functions similar to CleanSVGs and CleanComments
+        // Example: Cleaning comments based on a checkbox being checked
+        if (cleanCommentsToggle.IsChecked)
+        {
+            cleanedCode = CleanComments(cleanedCode);
+        }
+        // Add additional conditions for other cleaning options here
+
+        outputArea.Text = cleanedCode;
+        clearButton.IsVisible = !string.IsNullOrWhiteSpace(outputArea.Text);
+    }
+
+    private void OnClearButtonClicked(object sender, EventArgs e)
+    {
+        outputArea.Text = string.Empty;
+        clearButton.IsVisible = false;
+        // UpdateCharacterCount();
+    }
+    private void OutputArea_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Show clearButton only if outputArea has text
+        clearButton.IsVisible = !string.IsNullOrWhiteSpace(outputArea.Text);
+    }
+
+    private string CleanComments(string code)
+    {
+        // Remove single-line comments for languages like C++, Java, C#, JavaScript, etc.
+        code = Regex.Replace(code, @"^\s*//.*\n?", "", RegexOptions.Multiline);
+
+        // Remove multi-line comments for languages like C++, Java, C#, etc.
+        code = Regex.Replace(code, @"/\*[\s\S]*?\*/\s*\n?", "");
+
+        // Remove single-line comments for languages like Python, Ruby, etc.
+        code = Regex.Replace(code, @"^\s*#.*\n?", "", RegexOptions.Multiline);
+
+        // Remove multi-line comments for Python (triple quotes)
+        code = Regex.Replace(code, @"'''[\s\S]*?'''\s*\n?", "");
+        code = Regex.Replace(code, @"""""[\s\S]*?""""\s*\n?", "");
+
+        // Remove HTML comments
+        code = Regex.Replace(code, @"<!--[\s\S]*?-->\s*\n?", "");
+
+        // Extra removal for inline comments in languages like Python and Ruby (without removing the entire line)
+        code = Regex.Replace(code, @"\s*#.*$", "", RegexOptions.Multiline);
+
+        return code;
+    }
+
 }
