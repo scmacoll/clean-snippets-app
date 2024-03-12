@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("clean-snippets-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+bb73d0d94841fb42550d43242fe5a4c2a683a380")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1c953eef9a45663e61d9448c471550d2707a9c4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("clean-snippets-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("clean-snippets-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

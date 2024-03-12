@@ -1066,3 +1066,4 @@
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/stamp/_GenerateJavaStubs.stamp
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/stamp/_GeneratePackageManagerJava.stamp
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/stamp/_ResolveLibraryProjectImports.stamp
+/Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.sourcelink.json

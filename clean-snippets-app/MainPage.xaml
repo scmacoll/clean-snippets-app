@@ -26,6 +26,38 @@
                    Style="{StaticResource SubHeadline}"
                    SemanticProperties.HeadingLevel="Level2" />
 
+            <!-- Toggle Controls for Cleaning Options -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="cleanAllToggle"/>
+                    <Label Text="All" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="cleanBlankLinesToggle"/>
+                    <Label Text="Blank Lines" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="cleanCommentsToggle"/>
+                    <Label Text="Comments" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="cleanImportsToggle"/>
+                    <Label Text="Imports" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="cleanSvgToggle"/>
+                    <Label  Text="SVG (inline)" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="cleanWhitespaceToggle"/>
+                    <Label Text="Whitespace" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="cleanWrapToggle"/>
+                    <Label Text="Wrapping" />
+                </StackLayout>
+            </StackLayout>
+
             <!-- Code Input Area -->
             <Editor x:Name="inputArea"
                     Placeholder="Paste your code here..."
@@ -35,11 +67,13 @@
             <Button x:Name="cleanButton"
                     Text="Clean"
                     />
+                    <!-- Clicked="OnCleanButtonClicked" /> -->
 
             <Button x:Name="clearButton"
                     Text="Clear"
                     />
-<!-- comment -->
+                    <!-- Clicked="OnClearButtonClicked" /> -->
+
             <!-- Output Area -->
             <Editor x:Name="outputArea"
                     Placeholder="Cleaned code will appear here..."
