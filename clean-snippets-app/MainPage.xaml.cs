@@ -39,7 +39,10 @@ public partial class MainPage : ContentPage
         {
             cleanedCode = CleanComments(cleanedCode);
         }
-        // Add additional conditions for other cleaning options here
+        if (cleanImportsToggle.IsChecked)
+        {
+            cleanedCode = CleanImports(cleanedCode);
+        }
 
         outputArea.Text = cleanedCode;
         clearButton.IsVisible = !string.IsNullOrWhiteSpace(outputArea.Text);
@@ -77,6 +80,20 @@ public partial class MainPage : ContentPage
 
         // Extra removal for inline comments in languages like Python and Ruby (without removing the entire line)
         code = Regex.Replace(code, @"\s*#.*$", "", RegexOptions.Multiline);
+
+        return code;
+    }
+
+    private string CleanImports(string code)
+    {
+        // For JavaScript imports
+        code = Regex.Replace(code, @"^import .*;\s+", "", RegexOptions.Multiline);
+
+        // For Python imports
+        code = Regex.Replace(code, @"^import .*\s+", "", RegexOptions.Multiline);
+
+        // For Python 'from' imports
+        code = Regex.Replace(code, @"^from .* import .*\s+", "", RegexOptions.Multiline);
 
         return code;
     }
