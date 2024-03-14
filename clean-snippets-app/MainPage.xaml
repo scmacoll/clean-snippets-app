@@ -6,7 +6,7 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="30"
-            Spacing="10"
+            Spacing="5"
             HorizontalOptions="FillAndExpand">
             <Label
                 Text="Clean Snippets"
@@ -63,44 +63,76 @@
             </StackLayout>
 
             <!-- Code Input Area -->
-            <Editor x:Name="inputArea"
-                    Placeholder="Paste your code here..."
-                    HeightRequest="150" />
-
-            <!-- Buttons -->
-            <Button x:Name="cleanButton"
-                    Text="Clean"
-                    Clicked="OnCleanButtonClicked"
-                    />
-
-            <Button x:Name="clearButton"
-                    Text="Clear"
-                    Clicked="OnClearButtonClicked"
-                    IsVisible="false"
-                    />
+            <Frame BorderColor="#ccc"
+                   HasShadow="False"
+                   CornerRadius="8"
+                   Padding="8,4,8,4"
+                   BackgroundColor="#23282d"
+            >
+                <Editor x:Name="inputArea"
+                        Placeholder="Paste your code here..."
+                        TextColor="#888"
+                        PlaceholderColor="#888"
+                        BackgroundColor="#23282d"
+                        HeightRequest="150" />
+            </Frame>
 
             <Label x:Name="inputCharCount"
                    FontSize="12"
                    Style="{StaticResource SubHeadline}"
+                   TextColor="#888"
                    HorizontalOptions="End"
                    AutomationProperties.HelpText="Input Character Count" />
 
-            <!-- Output Area -->
-            <ScrollView HeightRequest="150">
-                <Label x:Name="outputArea"
-                       Text="Cleaned code will appear here..."
-                       VerticalOptions="Start"
-                       HorizontalOptions="FillAndExpand" />
-            </ScrollView>
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="cleanButton"
+                        Text="Clean"
+                        TextColor="#ffffff"
+                        BackgroundColor="#003BB2"
+                        WidthRequest="75"
+                        Clicked="OnCleanButtonClicked"
+                />
+                <Button x:Name="clearButton"
+                        Text="Clear"
+                        TextColor="#ccc"
+                        BackgroundColor="transparent"
+                        WidthRequest="75"
+                        Clicked="OnClearButtonClicked"
+                        IsVisible="false"
+                />
+                <!-- Expanding space to push the copy button to the end -->
+                <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="transparent" />
+                <Button x:Name="copyButton"
+                        Text="Copy"
+                        TextColor="#ffffff"
+                        BackgroundColor="#2d4a86"
+                        HeightRequest="25"
+                        Clicked="OnCopyButtonClicked"
+                />
+            </StackLayout>
 
-            <Button x:Name="copyButton"
-                    Text="Copy"
-                    Clicked="OnCopyButtonClicked"
-            />
+                <!-- Output Area -->
+            <Frame BorderColor="#ccc"
+                   HasShadow="False"
+                   CornerRadius="8"
+                   Padding="8,4,8,4"
+                   BackgroundColor="#23282d"
+            >
+                <ScrollView HeightRequest="150">
+                    <Label x:Name="outputArea"
+                           Text="Cleaned code will appear here..."
+                           TextColor="#888"
+                           VerticalOptions="Start"
+                           HorizontalOptions="FillAndExpand" />
+                </ScrollView>
+
+            </Frame>
+
 
             <Label x:Name="outputCharCount"
                    FontSize="12"
                    Style="{StaticResource SubHeadline}"
+                   TextColor="#888"
                    HorizontalOptions="End"
                    AutomationProperties.HelpText="Output Character Count" />
 
