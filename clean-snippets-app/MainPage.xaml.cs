@@ -15,6 +15,27 @@ public partial class MainPage : ContentPage
         cleanAllToggle.IsChecked = true;
         SetAllTogglesState(true);
         UpdateCharacterCount();
+        SizeChanged += OnPageSizeChanged;
+    }
+    private void OnPageSizeChanged(object sender, EventArgs e)
+    {
+        // Calculate 1/3 of the page height
+        var thirdHeight = Height / 3;
+
+        // Assuming your inputArea and a ScrollView for the outputArea are directly accessible
+        // and named as in your original XAML snippet.
+        // Adjust the input area height
+        if(inputArea.Parent is VisualElement parentInputArea)
+        {
+            parentInputArea.HeightRequest = thirdHeight;
+        }
+
+        // Adjust the output area height
+        // This assumes the outputArea is wrapped in a ScrollView named outputScrollView in your XAML
+        if(outputArea.Parent is VisualElement parentOutputArea)
+        {
+            parentOutputArea.HeightRequest = thirdHeight;
+        }
     }
 
     private void UpdateCharacterCount()
