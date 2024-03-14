@@ -1,60 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="clean_snippets_app.MainPage">
+             x:Class="clean_snippets_app.MainPage"
+             BackgroundColor="#22272E">
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+            Padding="30"
+            Spacing="10"
+            HorizontalOptions="FillAndExpand">
             <Label
                 Text="Clean Snippets"
-                FontSize="24"
-                HorizontalOptions="Center"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                FontSize="30"
+                TextColor="#ffffff"
+                HorizontalOptions="Start"
+                Margin="0,0,0,10" />
 
             <Label
                 Text="Simplify Your Code Snippets for Sharing and Prompting"
                 FontSize="16"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Tagline" />
+                TextColor="#888"
+                HorizontalOptions="Start"
+                Margin="0,0,0,5" />
 
             <!-- Section for Code Input -->
-            <Label Text="Remove:"
-                   FontSize="20"
-                   Style="{StaticResource SubHeadline}"
-                   SemanticProperties.HeadingLevel="Level2" />
+            <Label
+                Text="Remove:"
+                FontSize="18"
+                TextColor="#ffffff"
+                HorizontalOptions="Start"
+                Margin="0,20,0,0" />
 
             <!-- Toggle Controls for Cleaning Options -->
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanAllToggle" CheckedChanged="AllToggleChecked" VerticalOptions="Center" />
-                    <Label Text="All" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanAllToggle" Color="#003BB2" CheckedChanged="AllToggleChecked" VerticalOptions="Center" />
+                    <Label Text="All" TextColor="#888" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanBlankLinesToggle" VerticalOptions="Center" />
-                    <Label Text="Blank Lines" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanBlankLinesToggle" Color="#003BB2" VerticalOptions="Center" />
+                    <Label Text="Blank Lines" TextColor="#888" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanCommentsToggle" VerticalOptions="Center" />
-                    <Label Text="Comments" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanCommentsToggle" Color="#003BB2" VerticalOptions="Center" />
+                    <Label Text="Comments" TextColor="#888" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanImportsToggle" VerticalOptions="Center" />
-                    <Label Text="Imports" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanImportsToggle" Color="#003BB2" VerticalOptions="Center" />
+                    <Label Text="Imports" TextColor="#888" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanSvgToggle" VerticalOptions="Center" />
-                    <Label  Text="SVG (inline)" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanSvgToggle" Color="#003BB2" VerticalOptions="Center" />
+                    <Label  Text="SVG (inline)" TextColor="#888" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanWhitespaceToggle" VerticalOptions="Center" />
-                    <Label Text="Whitespace" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanWhitespaceToggle" Color="#003BB2" VerticalOptions="Center" />
+                    <Label Text="Whitespace" TextColor="#888" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanWrapToggle" VerticalOptions="Center" />
-                    <Label Text="Wrapping" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanWrapToggle" Color="#003BB2" VerticalOptions="Center" />
+                    <Label Text="Wrapping" TextColor="#888" VerticalOptions="Center" />
                 </StackLayout>
             </StackLayout>
 
