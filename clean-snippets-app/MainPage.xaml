@@ -29,7 +29,7 @@
             <!-- Toggle Controls for Cleaning Options -->
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="cleanAllToggle" VerticalOptions="Center" />
+                    <CheckBox x:Name="cleanAllToggle" CheckedChanged="AllToggleChecked" VerticalOptions="Center" />
                     <Label Text="All" VerticalOptions="Center" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -75,6 +75,12 @@
                     IsVisible="false"
                     />
 
+            <Label x:Name="inputCharCount"
+                   FontSize="12"
+                   Style="{StaticResource SubHeadline}"
+                   HorizontalOptions="End"
+                   AutomationProperties.HelpText="Input Character Count" />
+
             <!-- Output Area -->
             <ScrollView HeightRequest="150">
                 <Label x:Name="outputArea"
@@ -83,13 +89,18 @@
                        HorizontalOptions="FillAndExpand" />
             </ScrollView>
 
+            <Button x:Name="copyButton"
+                    Text="Copy"
+                    Clicked="OnCopyButtonClicked"
+            />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+            <Label x:Name="outputCharCount"
+                   FontSize="12"
+                   Style="{StaticResource SubHeadline}"
+                   HorizontalOptions="End"
+                   AutomationProperties.HelpText="Output Character Count" />
+
+
         </VerticalStackLayout>
     </ScrollView>
 
