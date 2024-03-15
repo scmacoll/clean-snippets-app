@@ -5,7 +5,7 @@
              BackgroundColor="#22272E">
     <ScrollView>
         <Grid
-            Padding="30"
+            Padding="30,30,30,10"
             HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />   <!-- grid 0 -->
@@ -72,7 +72,7 @@
                 </FlexLayout>
 
                 <!-- Code Input Area -->
-                <Frame x:Name="inputFrame" BorderColor="#ccc"
+                <Frame x:Name="inputFrame" MinimumHeightRequest="70" BorderColor="#ccc"
                         HasShadow="False"
                         CornerRadius="8"
                         Margin="1,1,1,1"
@@ -126,7 +126,7 @@
 
 
                     <!-- Output Area -->
-                <Frame x:Name="outputFrame" BorderColor="#ccc"
+                <Frame x:Name="outputFrame" MinimumHeightRequest="70" BorderColor="#ccc"
                        HasShadow="False"
                        CornerRadius="8"
                        BackgroundColor="#23282d"
