@@ -7,8 +7,6 @@ namespace clean_snippets_app;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
-
     public MainPage()
     {
         InitializeComponent();
@@ -17,26 +15,41 @@ public partial class MainPage : ContentPage
         UpdateCharacterCount();
         SizeChanged += OnPageSizeChanged;
     }
+
     private void OnPageSizeChanged(object sender, EventArgs e)
     {
-        // Calculate 1/3 of the page height
-        var thirdHeight = Height / 3;
+        // Recalculate other elements' height if it changes with window size or orientation
+        double otherElementsHeight = CalculateNonDynamicElementsHeight();
 
-        // Assuming your inputArea and a ScrollView for the outputArea are directly accessible
-        // and named as in your original XAML snippet.
-        // Adjust the input area height
-        if(inputArea.Parent is VisualElement parentInputArea)
-        {
-            parentInputArea.HeightRequest = thirdHeight;
-        }
+        // Ensure there's a buffer or margin considered for a more flexible layout
+        double layoutBuffer = CalculateLayoutBuffer();
 
-        // Adjust the output area height
-        // This assumes the outputArea is wrapped in a ScrollView named outputScrollView in your XAML
-        if(outputArea.Parent is VisualElement parentOutputArea)
-        {
-            parentOutputArea.HeightRequest = thirdHeight;
-        }
+        // Calculate available height more precisely
+        double availableHeight = Height - otherElementsHeight - layoutBuffer - (Padding.Top + Padding.Bottom);
+
+        // Adjust the division factor based on your observations and requirements
+        double divisionFactor = 2.5; // Example adjustment based on trial and observation
+
+        double dynamicAreaHeight = availableHeight / divisionFactor;
+
+        inputFrame.HeightRequest = dynamicAreaHeight;
+        outputFrame.HeightRequest = dynamicAreaHeight;
     }
+
+    private double CalculateNonDynamicElementsHeight()
+    {
+        // Adjust this calculation as needed
+        return 200; // Placeholder, calculate based on actual UI elements
+    }
+
+    private double CalculateLayoutBuffer()
+    {
+        // Define a buffer to account for margins/paddings not covered elsewhere
+        // This helps in ensuring there's a 'breathing room' in the layout, preventing it from feeling too packed
+        return 50; // This is an example value. Adjust based on your layout's needs.
+    }
+
+
 
     private void UpdateCharacterCount()
     {
