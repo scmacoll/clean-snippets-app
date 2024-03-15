@@ -10,6 +10,8 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        inputArea.Text = string.Empty;
+        outputArea.Text = string.Empty;
         cleanAllToggle.IsChecked = true;
         SetAllTogglesState(true);
         UpdateCharacterCount();

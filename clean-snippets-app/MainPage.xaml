@@ -75,21 +75,24 @@
                 <Frame x:Name="inputFrame" MinimumHeightRequest="70" BorderColor="#ccc"
                         HasShadow="False"
                         CornerRadius="8"
-                        Margin="1,1,1,1"
+                        Padding="8"
                         BackgroundColor="#23282d"
                 >
                     <Editor x:Name="inputArea"
                             Placeholder="Paste your code here..."
-                            TextColor="#888"
-                            PlaceholderColor="#888"
+                            TextColor="#ccc"
+                            PlaceholderColor="#ccc"
                             BackgroundColor="#23282d"
-                            HorizontalOptions="FillAndExpand" />
+                            IsTextPredictionEnabled="False"
+                            IsSpellCheckEnabled="False"
+                             />
                 </Frame>
 
                 <Label x:Name="inputCharCount"
                        FontSize="12"
                        Style="{StaticResource SubHeadline}"
                        TextColor="#888"
+                       Margin="0,8,0,0"
                        HorizontalOptions="End"
                        AutomationProperties.HelpText="Input Character Count" />
 
@@ -124,21 +127,33 @@
                     />
                 </StackLayout>
 
-
                     <!-- Output Area -->
                 <Frame x:Name="outputFrame" MinimumHeightRequest="70" BorderColor="#ccc"
                        HasShadow="False"
                        CornerRadius="8"
+                       Padding="8"
                        BackgroundColor="#23282d"
                 >
-                    <ScrollView>
-                        <Label x:Name="outputArea"
-                               Text="Cleaned code will appear here..."
-                               TextColor="#888"
-                               VerticalOptions="Start"
-                               Margin="1,1,1,1"
-                               HorizontalOptions="FillAndExpand" />
-                    </ScrollView>
+                        <!-- <Label x:Name="outputArea" -->
+                        <!--        Text="Cleaned code will appear here..." -->
+                        <!--        TextColor="#888" -->
+                        <!--        VerticalOptions="Start" -->
+                        <!--        Margin="1,1,1,1" -->
+                        <!--        HorizontalOptions="FillAndExpand" /> -->
+
+                            <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Editor x:Name="outputArea"
+                                        AutoSize="TextChanges"
+                                        Placeholder="Cleaned code will appear here..."
+                                        TextColor="#ccc"
+                                        PlaceholderColor="#ccc"
+                                        BackgroundColor="#23282d"
+                                        IsReadOnly="true"
+                                        IsTextPredictionEnabled="False"
+                                        IsSpellCheckEnabled="False"
+                                        VerticalOptions="FillAndExpand"
+                                />
+                            </ScrollView>
 
                 </Frame>
 
@@ -146,6 +161,7 @@
                        FontSize="12"
                        Style="{StaticResource SubHeadline}"
                        TextColor="#888"
+                       Margin="0,8,0,0"
                        HorizontalOptions="End"
                        AutomationProperties.HelpText="Output Character Count" />
 
