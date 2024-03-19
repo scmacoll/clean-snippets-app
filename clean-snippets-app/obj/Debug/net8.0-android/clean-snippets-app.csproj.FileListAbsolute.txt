@@ -114,6 +114,7 @@
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.AssemblyInfoInputs.cache
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.AssemblyInfo.cs
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.csproj.CoreCompileInputs.cache
+/Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.sourcelink.json
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/XamlC.stamp
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.dll
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.pdb
@@ -1066,4 +1067,3 @@
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/stamp/_GenerateJavaStubs.stamp
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/stamp/_GeneratePackageManagerJava.stamp
 /Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/stamp/_ResolveLibraryProjectImports.stamp
-/Users/stu/RiderProjects/clean-snippets-app/clean-snippets-app/obj/Debug/net8.0-android/clean-snippets-app.sourcelink.json
