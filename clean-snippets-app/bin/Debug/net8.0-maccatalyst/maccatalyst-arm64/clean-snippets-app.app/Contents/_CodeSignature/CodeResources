@@ -12,6 +12,10 @@
 		<data>
 		Py602DNzTIMZuQPVRQviCcbSnsA=
 		</data>
+		<key>Resources/MauiInfo.plist</key>
+		<data>
+		iEtuUGCV6JM3gxS/pO33swhmpp8=
+		</data>
 		<key>Resources/MonoTouchDebugConfiguration.txt</key>
 		<data>
 		oowkf1sL6T19nanXUObgmuayWqM=
@@ -1349,14 +1353,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y2ylN9E/tP3afDUEZY5V9ZjcNB4xg4Tiu85UO9guUAk=
+			7uS6j4JWoDzoa0xuiTdYhW/9LsOdIidUDNWUsglcZjs=
 			</data>
 		</dict>
 		<key>MonoBundle/clean-snippets-app.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eFaZDdbgth48hHyAJZSArFwn5sinbtzNZnL1bnBY9l4=
+			m1Zcme+QemQEy0gw1M3LjjTXKMDUy+OJcuFMnpfP0cM=
 			</data>
 		</dict>
 		<key>MonoBundle/cs/Microsoft.Maui.Controls.resources.dll</key>
@@ -1623,6 +1627,13 @@
 			<key>hash2</key>
 			<data>
 			nNqiHjPnJLMPdPTzgUtWziKGRTzP71o1sYVc9T906kw=
+			</data>
+		</dict>
+		<key>Resources/MauiInfo.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tx0KXqEC+DvcCGyogQTEQWHcCWJYYqH24NtPwhpQEjo=
 			</data>
 		</dict>
 		<key>Resources/MonoTouchDebugConfiguration.txt</key>
