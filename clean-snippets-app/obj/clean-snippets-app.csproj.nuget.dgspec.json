@@ -23,7 +23,6 @@
           "net8.0-maccatalyst"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,11 +43,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -196,13 +190,10 @@
         "android-x86": {
           "#import": []
         },
-        "ios-arm64": {
+        "iossimulator-arm64": {
           "#import": []
         },
         "maccatalyst-arm64": {
-          "#import": []
-        },
-        "maccatalyst-x64": {
           "#import": []
         }
       }
